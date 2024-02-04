@@ -60,14 +60,14 @@ public class TaskService : ITaskService
         UpdateTask(timeMinute);
     }
 
-    private void UpdateTask(int timeMinute)
+    private void UpdateTask(int timerMinute)
     {
         using var service = new Scheduler.TaskService();
         using var task = service.GetTask(Constants.ProgramName);
 
         if (task is null) return;
 
-        task.Definition.Triggers[0].Repetition.Interval = TimeSpan.FromMinutes(timeMinute);
+        task.Definition.Triggers[0].Repetition.Interval = TimeSpan.FromMinutes(timerMinute);
         task.RegisterChanges();
     }
 }

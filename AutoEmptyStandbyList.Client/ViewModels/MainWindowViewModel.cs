@@ -16,8 +16,6 @@ partial class MainWindowViewModel : ViewModelBase
     private Preferences? _preferences;
 
     [ObservableProperty] private int _timerMinute;
-    [ObservableProperty] private int[] _comboList = [5, 10, 15, 30, 60];
-    [ObservableProperty] private int _selectedIndex;
 
     public MainWindowViewModel()
     {
@@ -28,13 +26,13 @@ partial class MainWindowViewModel : ViewModelBase
         _taskService = taskService;
         _preferencesesService = preferencesesService;
 
-        ApplyPreferences(ComboList[0]);
+        ApplyPreferences(5);
     }
 
     [RelayCommand]
     private async Task Apply()
     {
-        _preferences!.TimerMinute = ComboList[SelectedIndex];
+        _preferences!.TimerMinute = TimerMinute;
         _preferencesesService.SavePreferences(_preferences);
 
         _taskService.SetTimer(_preferences!.TimerMinute);
@@ -51,7 +49,6 @@ partial class MainWindowViewModel : ViewModelBase
         if (_preferences is not null)
         {
             TimerMinute = _preferences.TimerMinute;
-            SelectedIndex = Array.FindIndex(ComboList, v => v == TimerMinute);;
         }
         else
         {
