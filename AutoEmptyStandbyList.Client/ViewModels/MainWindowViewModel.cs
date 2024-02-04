@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using AutoEmptyStandbyList.Shared.Models;
 using AutoEmptyStandbyList.Shared.Services;
 using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 
 namespace AutoEmptyStandbyList.Client.ViewModels;
 
@@ -38,7 +40,7 @@ partial class MainWindowViewModel : ViewModelBase
         _taskService.SetTimer(_preferences!.TimerMinute);
 
         var box = MessageBoxManager
-            .GetMessageBoxStandard("Apply", "적용 완료!");
+            .GetMessageBoxStandard("Apply", "적용 완료!", ButtonEnum.Ok, Icon.Success);
 
         await box.ShowAsync();
     }
@@ -49,6 +51,7 @@ partial class MainWindowViewModel : ViewModelBase
         if (_preferences is not null)
         {
             TimerMinute = _preferences.TimerMinute;
+            SelectedIndex = Array.FindIndex(ComboList, v => v == TimerMinute);;
         }
         else
         {
