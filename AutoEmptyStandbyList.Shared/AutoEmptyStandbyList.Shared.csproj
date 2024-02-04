@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Salaros.ConfigParser" Version="0.3.8" />
+      <PackageReference Include="TaskScheduler" Version="2.10.1" />
+    </ItemGroup>
+
 </Project>
