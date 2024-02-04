@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace AutoEmptyStandbyList.ViewModels;
+namespace AutoEmptyStandbyList.Client.ViewModels;
 
 public class ViewModelBase : ObservableObject
 {

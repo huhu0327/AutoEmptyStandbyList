@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEmptyStandbyList", "AutoEmptyStandbyList\AutoEmptyStandbyList.csproj", "{07997C94-4E72-44D8-B050-9CDDAD812AB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEmptyStandbyList.Client", "AutoEmptyStandbyList.Client\AutoEmptyStandbyList.Client.csproj", "{07997C94-4E72-44D8-B050-9CDDAD812AB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEmptyStandbyList.Shared", "AutoEmptyStandbyList.Shared\AutoEmptyStandbyList.Shared.csproj", "{7AB01D9B-0CEC-4D10-9919-121CB21CD779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoEmptyStandbyList.Uninstaller", "AutoEmptyStandbyList.Uninstaller\AutoEmptyStandbyList.Uninstaller.csproj", "{D88ED678-C306-4CF4-B118-BA5CE54CE526}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{7AB01D9B-0CEC-4D10-9919-121CB21CD779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AB01D9B-0CEC-4D10-9919-121CB21CD779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AB01D9B-0CEC-4D10-9919-121CB21CD779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88ED678-C306-4CF4-B118-BA5CE54CE526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88ED678-C306-4CF4-B118-BA5CE54CE526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88ED678-C306-4CF4-B118-BA5CE54CE526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88ED678-C306-4CF4-B118-BA5CE54CE526}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -3,6 +3,9 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="AutoEmptyStandbyList.Client/App.axaml" value="AutoEmptyStandbyList.Client/AutoEmptyStandbyList.Client.csproj" />
+        <entry key="AutoEmptyStandbyList.Client/Views/MainWindow.axaml" value="AutoEmptyStandbyList.Client/AutoEmptyStandbyList.Client.csproj" />
+        <entry key="AutoEmptyStandbyList/App.axaml" value="AutoEmptyStandbyList/AutoEmptyStandbyList.csproj" />
         <entry key="AutoEmptyStandbyList/Views/MainWindow.axaml" value="AutoEmptyStandbyList/AutoEmptyStandbyList.csproj" />
       </map>
     </option>

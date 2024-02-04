@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace AutoEmptyStandbyList.Views;
+namespace AutoEmptyStandbyList.Client.Views;
 
 public partial class MainWindow : Window
 {
