@@ -1,3 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
+using AutoEmptyStandbyList.Shared;
+using AutoEmptyStandbyList.Shared.Models;
+using AutoEmptyStandbyList.Shared.Services;
 
-Console.WriteLine("Hello, World!");
+var task = new TaskService();
+task.RemoveTask();
+
+string currentPath = AppDomain.CurrentDomain.BaseDirectory;
+var parserPath = Path.Combine(currentPath, Constants.PreferencesFileName);
+
+File.Delete(parserPath);
