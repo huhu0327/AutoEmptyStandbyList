@@ -7,6 +7,7 @@
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <LangVersion>12</LangVersion>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <AssemblyName>AutoEmptyStandbyList</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
