@@ -25,14 +25,21 @@ public class TaskService : ITaskService
             task.Principal.LogonType = Scheduler.TaskLogonType.InteractiveToken;
             task.Principal.RunLevel = Scheduler.TaskRunLevel.Highest;
 
-            string currentPath = AppDomain.CurrentDomain.BaseDirectory;
-            var executePath = Path.Combine(currentPath, Constants.ExecuteProgramName);
 
             using var trigger = new Scheduler.TimeTrigger();
             trigger.Repetition.Interval = TimeSpan.FromMinutes(timerMinute);
+            
             task.Triggers.Add(trigger);
+            
+            string currentPath = AppDomain.CurrentDomain.BaseDirectory;
+            var exePath = Path.Combine(currentPath, Constants.ExeProgramName);
+            var scriptPath = Path.Combine(currentPath, Constants.ScriptProgramName);
 
-            task.Actions.Add(new Scheduler.ExecAction(executePath));
+            using var action = new Scheduler.ExecAction();
+            action.Path = "wscript.exe";
+            action.Arguments = $"\"{scriptPath}\" \"{exePath}\"";
+            
+            task.Actions.Add(action);
 
             task.Settings.Compatibility = Scheduler.TaskCompatibility.V2_3;
             task.Settings.DisallowStartIfOnBatteries = false;
