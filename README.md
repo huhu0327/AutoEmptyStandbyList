@@ -10,9 +10,8 @@ EmptyStandbyList.exe를 작업 스케줄러에 등록하여 주기적으로 실�
 
 ## 사용 방법
 1. 원하는 시간 주기 설정
-```
-최소: 1분 ~
-```
+> 최소: 1분
+
 2. 적용
 
 ## 기능
@@ -49,3 +48,5 @@ EmptyStandbyList.exe를 작업 스케줄러에 등록하여 주기적으로 실�
 
 ## 개선
 - [ ] github actions CD 배포화 자동
+  - Releases
+- [ ] Program Icon
