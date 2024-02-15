@@ -47,6 +47,4 @@ EmptyStandbyList.exe를 작업 스케줄러에 등록하여 주기적으로 실�
 |  TaskScheduler  | 2.10.1 |
 
 ## 개선
-- [ ] github actions CD 배포화 자동
-  - Releases
 - [ ] Program Icon
