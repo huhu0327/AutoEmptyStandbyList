@@ -26,16 +26,19 @@ jobs:
         dotnet-version: '8.x'
 
     - name: Restore dependencies
-      run: dotnet restore ${{ env.CLIENT_PATH }}
-      run: dotnet restore ${{ env.UNINSTALLER_PATH }}
+      run: |
+        dotnet restore ${{ env.CLIENT_PATH }}
+        dotnet restore ${{ env.UNINSTALLER_PATH }}
 
     - name: Build
-      run: dotnet build ${{ env.CLIENT_PATH }} --no-restore
-      run: dotnet build ${{ env.UNINSTALLER_PATH }} --no-restore
+      run: |
+        dotnet build ${{ env.CLIENT_PATH }} --no-restore
+        dotnet build ${{ env.UNINSTALLER_PATH }} --no-restore
 
     - name: Publish
-      run: dotnet publish ${{ env.CLIENT_PATH }} --no-build -c Release -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/client
-      run: dotnet publish ${{ env.UNINSTALLER_PATH }} --no-build -c Release -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/uninstall
+      run: |
+        dotnet publish ${{ env.CLIENT_PATH }} --no-build -c Release -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/client
+        dotnet publish ${{ env.UNINSTALLER_PATH }} --no-build -c Release -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/uninstall
     
     - name: Copy additional files
       run: |
