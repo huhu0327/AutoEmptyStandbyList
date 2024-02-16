@@ -8,8 +8,8 @@ on:
       - completed
 
 env:
-  CLIENT_PATH: AutoEmptyStandbyList.Client
-  UNINSTALLER_PATH: AutoEmptyStandbyList.Uninstaller
+  CLIENT_PATH: ./AutoEmptyStandbyList.Client
+  UNINSTALLER_PATH: ./AutoEmptyStandbyList.Uninstaller
 
 jobs:
   build:
@@ -25,15 +25,11 @@ jobs:
       with:
         dotnet-version: '8.x'
 
-    - name: Restore dependencies
-      run: |
-        dotnet restore ${{ env.CLIENT_PATH }}
-        dotnet restore ${{ env.UNINSTALLER_PATH }}
+    - name: Clean Solution
+      run: dotnet clean
 
-    - name: Build
-      run: |
-        dotnet build ${{ env.CLIENT_PATH }} --no-restore
-        dotnet build ${{ env.UNINSTALLER_PATH }} --no-restore
+    - name: Restore dependencies
+      run: dotnet restore
 
     - name: Publish
       run: |
