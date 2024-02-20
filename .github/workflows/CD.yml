@@ -35,12 +35,15 @@ jobs:
     
     - name: Copy additional files
       run: |
-        mkdir ./publish/scripts
-        cp ./Scripts/* ./publish/scripts/
+        mkdir ./Release/scripts
+        cp ./Scripts/* ./Release/scripts/
+        cp ./publish/client/AutoEmptyStandbyList.Client.exe ./Release/
+        cp ./publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe ./Release/
 
-    - name: Archive files
-      run: |
-        zip -r ./Release.zip ./publish/client/AutoEmptyStandbyList.Client.exe ./publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe ./publish/scripts
+    - name: Zip files
+      uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r Release.zip ./Release
 
     - name: Create Release
       id: create_release
