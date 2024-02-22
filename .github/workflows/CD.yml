@@ -37,8 +37,8 @@ jobs:
       run: |
         mkdir ./Release/scripts
         cp ./Scripts/* ./Release/scripts/
-        cp ./publish/client/AutoEmptyStandbyList.Client.exe ./Release/
-        cp ./publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe ./Release/
+        cp ./publish/client/AutoEmptyStandbyList.Client.exe ./Release/AutoEmptyStandbyList.Client.exe
+        cp ./publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe ./Release/AutoEmptyStandbyList.Uninstaller.exe
 
     - name: Zip files
       uses: montudor/action-zip@v1
