@@ -30,20 +30,20 @@ jobs:
 
     - name: Publish
       run: |
-        dotnet publish ${{ env.CLIENT_PATH }} -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/client
-        dotnet publish ${{ env.UNINSTALLER_PATH }} -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o ./publish/uninstall
+        dotnet publish ${{ env.CLIENT_PATH }} -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o /publish/client
+        dotnet publish ${{ env.UNINSTALLER_PATH }} -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o /publish/uninstall
     
     - name: Copy additional files
       run: |
-        mkdir ./Release/scripts
-        cp ./Scripts/* ./Release/scripts/
-        cp ./publish/client/AutoEmptyStandbyList.Client.exe ./Release/AutoEmptyStandbyList.Client.exe
-        cp ./publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe ./Release/AutoEmptyStandbyList.Uninstaller.exe
+        mkdir /Release/scripts
+        cp ./Scripts/* /Release/scripts/
+        cp /publish/client/AutoEmptyStandbyList.Client.exe /Release/AutoEmptyStandbyList.Client.exe
+        cp /publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe /Release/AutoEmptyStandbyList.Uninstaller.exe
 
     - name: Zip files
       uses: montudor/action-zip@v1
       with:
-        args: zip -qq -r Release.zip ./Release
+        args: zip -qq -r Release.zip /Release
 
     - name: Create Release
       id: create_release
