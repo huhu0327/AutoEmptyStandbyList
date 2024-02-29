@@ -37,7 +37,7 @@ jobs:
       run: |
         mkdir /Release/scripts
         cp ./Scripts/* /Release/scripts/
-        cp /publish/client/AutoEmptyStandbyList.Client.exe /Release/AutoEmptyStandbyList.Client.exe
+        cp /publish/client/AutoEmptyStandbyList.exe /Release/AutoEmptyStandbyList.exe
         cp /publish/uninstall/AutoEmptyStandbyList.Uninstaller.exe /Release/AutoEmptyStandbyList.Uninstaller.exe
 
     - name: Zip files
