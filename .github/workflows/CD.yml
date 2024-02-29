@@ -44,8 +44,6 @@ jobs:
       run: Compress-Archive -Path /Release/* -Destination Release.zip 
 
     - name: Create or Update Release
-      uses: ColinPitrat/update-release@v1.0.1
+      uses: softprops/action-gh-release@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: |
-          ./Release.zip
+        files: Release.zip
